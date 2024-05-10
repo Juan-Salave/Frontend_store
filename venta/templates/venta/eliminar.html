@@ -1,0 +1,23 @@
+{% extends 'venta/base.html' %}
+{% load static %}
+{% block contenido %}
+
+<nav class="navegacion"> 
+    <a class="navegacion__enlace" href="{% url 'Tienda' %}">Tienda</a>
+    <a class="navegacion__enlace" href="{% url 'Nosotros' %}">Nosotros</a>
+    <a class="navegacion__enlace navegacion__enlace--activo" href="{% url 'Admin' %}">Administracion</a>
+</nav>
+
+<h1>Eliminar Producto</h1>
+<main class="comtenedor__agregar">
+    <div class=''>
+        <form method="post">{% csrf_token %}
+            <div class="formulario__agregar">
+                ¿Estás seguro que deseas eliminar el Producto:  {{ object.nombre }}?
+                <input class="formulario__submit" type="submit" value='Eliminar' />
+                <a class="formulario__submit" href='{% url 'Admin'%}'>Cancelar</a>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock contenido %}

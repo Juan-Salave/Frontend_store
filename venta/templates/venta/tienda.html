@@ -1,0 +1,38 @@
+{% extends 'venta/base.html' %}
+{% block contenido %}
+{% load static %}
+
+<nav class="navegacion"> 
+    <a class="navegacion__enlace navegacion__enlace--activo" href="{% url 'Tienda' %}">Tienda</a>
+    <a class="navegacion__enlace" href="{% url 'Nosotros' %}">Nosotros</a>
+    <a class="navegacion__enlace" href="{% url 'Login' %}">Login</a>
+    <a class="navegacion__enlace" href="{% url 'Registro' %}">Registro</a>
+    <a class="navegacion__enlace" href="{% url 'Logout' %}">Logout</a>
+</nav>
+
+<main class="comtenedor">
+    <h1>Nuestros  Productos</h1>
+
+    <div class="grid">
+        
+        {% for i in producto%}
+        <a href={% url 'Producto' i.id %}>  
+
+            <div class="producto">
+
+                <div>
+                    <img src="{{ i.imagen.url }}" alt='img'>
+                </div>
+            
+                <div>
+                    <p class="producto__nombre">{{ i.nombre | capfirst }}</p>
+                    <p class="producto__precio"> {{ i.precio }} USD </p>
+                </div>
+
+            </div>            
+        </a> 
+        {% endfor %}
+        
+    </div>
+</main>
+{% endblock contenido %}

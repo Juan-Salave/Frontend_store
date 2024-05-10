@@ -1,0 +1,26 @@
+{% extends 'venta/base.html' %}
+{% load static %}
+{% block contenido %}
+
+<nav class="navegacion"> 
+    <a class="navegacion__enlace" href="{% url 'Tienda' %}">Tienda</a>
+    <a class="navegacion__enlace" href="{% url 'Nosotros' %}">Nosotros</a>
+</nav>
+
+<main class="comtenedor__agregar">
+    <h1>Agregar Producto</h1>
+    
+    <div>
+        <form method='POST' enctype='multipart/form-data' >
+            {% csrf_token %}
+            <div class="formulario__agregar">
+                {{ form.as_p }}
+                <a><input class="formulario__submit" type="submit" value="Guardar"> </a>
+            </div>
+        </form>
+    </div>
+
+    
+</main>
+
+{% endblock contenido %}

@@ -1,0 +1,62 @@
+{% extends 'venta/base.html' %}
+{% block contenido %}
+{% load static %}
+
+<nav class="navegacion">
+    <a class="navegacion__enlace " href="{% url 'Tienda' %}">Tienda</a>
+    <a class="navegacion__enlace navegacion__enlace--activo" href="{% url 'Nosotros' %}">Nosotros</a>
+    <a class="navegacion__enlace" href="{% url 'Admin' %}">Admin</a>
+</nav>
+
+<main class="comtenedor">
+
+    <h1>Nosotros</h1>
+
+    <div class="nosotros">
+        <div class="nosotros__contenido">
+            <p>
+                Somos FRONTND STORE, una empresa argentina con más de 2 años de experiencia en el mercado, ofrecemos prendas de buena calidad al mejor precio, permitiendoter elegir el logotipo o logotipos que mas representan.
+            </p>
+            <p>
+                It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+            </p>
+
+        </div>
+        <img class="nosotros__imagen" src="{% static 'venta/img/nosotros.jpg'%}" alt="ima_nosotros">
+    </div>
+    
+</main>
+
+<section class="contenedor compra">
+    <h2 class="compra__titulo">Porque comprar con nosotros?</h2>
+
+    <div class="bloques">
+
+        <div class="bloque">
+            <img src="{% static 'venta/img/icono_.png'%}" alt="porque comprar">
+            <h3 class="bloque__titulo"> El Mejor Precio</h3>
+            <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock</p>
+        </div>
+
+        <div class="bloque">
+            <img src="{% static 'venta/img/icono_2.png'%}" alt="para devs">
+            <h3 class="bloque__titulo"> Para Devs</h3>
+            <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock</p>
+        </div>
+
+        <div class="bloque">
+            <img src="{% static 'venta/img/icono_3.png'%}" alt="envio gratis">
+            <h3 class="bloque__titulo"> Envio Gratis</h3>
+            <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock</p>
+        </div>
+
+        <div class="bloque">
+            <img src="{% static 'venta/img/icono_4.png'%}" alt="la mejor calidad">
+            <h3 class="bloque__titulo"> La Mejor Calidad</h3>
+            <p>It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock</p>
+        </div>
+
+    </div>
+</section>
+
+{% endblock contenido %}

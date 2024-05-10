@@ -1,0 +1,29 @@
+{% extends 'venta/base.html' %}
+{% block contenido %}
+{% load static %}
+
+<nav class="navegacion"> 
+    <a class="navegacion__enlace navegacion__enlace--activo" href="{% url 'Tienda' %}">Tienda</a>
+    <a class="navegacion__enlace" href="{% url 'Nosotros' %}">Nosotros</a>
+</nav>
+
+<main class="comtenedor__agregar">
+    <h1> Login </h1>
+
+    <div>
+    
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <div class="formulario__agregar">
+                {{ form.as_p }}
+                {{msg_login}}
+            <button class="formulario__submit" type="submit">Inciar sesion</button>
+            </div>
+            
+        </form>
+    </div>
+    
+</main>
+
+{% endblock contenido %}

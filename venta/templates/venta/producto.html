@@ -1,0 +1,35 @@
+{% extends 'venta/base.html' %}
+{% block contenido %}
+{% load static %}
+
+<nav class="navegacion"> 
+    <a class="navegacion__enlace " href="{% url 'Tienda' %}">Tienda</a>
+</nav>
+
+<main class="comtenedor">
+    <h1>{{ object.nombre }}</h1>
+
+    <div class="camisa">
+        <img src= {{ object.imagen.url }} alt='img'>
+
+        <div class="camisa__contenido">
+            <p>
+                {{ object.descripcion }}
+                <p class="producto__precio">  Precio : {{ object.precio }} USD </p>
+            </p>
+
+            <form class="formulario">
+                <select class="formulario__campo">
+                    <option disabled selected>-- Seleccionar Talla --</option>
+                    <option>Chica</option>
+                    <option>Mediana</option>
+                    <option>Grande</option>
+                </select>
+                <input class="formulario__campo" type="number" placeholder="cantidad" min="1">
+                <input class="formulario__submit" type="submit" value="Agregar al Carrito">
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock contenido %}

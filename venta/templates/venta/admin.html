@@ -1,0 +1,39 @@
+{% extends 'venta/base.html' %}
+{% block contenido %}
+{% load static %}
+
+<nav class="navegacion"> 
+    <a class="navegacion__enlace" href="{% url 'Tienda' %}">Tienda</a>
+    <a class="navegacion__enlace" href="{% url 'Nosotros' %}">Nosotros</a>
+    <a class="navegacion__enlace navegacion__enlace--activo" href="{% url 'Admin' %}">Administracion</a>
+</nav>
+
+<main class="comtenedor">
+    <h1>Aqui podras ver, editar, borrar y <a href="{% url 'Agregar' %}">Cargar</a> nuevos procuctos</h1>
+
+    <div class="grid">
+        
+        {% for i in object_list %}
+        <!-- <a href={% url 'Producto' i.id %}> -->
+
+            <div class="grid__crud">
+
+                <div class="imagen__crud">
+                    <img src="{{ i.imagen.url }}" alt='img'>
+                </div>
+            
+                <div class="base__boton">  
+                    <a class="boton__crud" href="{% url 'Producto' i.id %}">Ver</a>  
+                    <a class="boton__crud" href="{% url 'Editar' i.id %}">Editar</a>  
+                    <a class="boton__crud" href="{% url 'Eliminar' i.id %}">Eliminar</a>
+                    <!-- <p class="producto__nombre">{{ i.nombre | capfirst }}</p>
+                    <p class="producto__precio"> {{ i.precio }} USD </p>                    -->
+                </div>
+
+            </div>            
+        <!-- </a>  -->
+        {% endfor %}
+        
+    </div>
+</main>
+{% endblock contenido %}

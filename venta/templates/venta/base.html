@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'venta/css/style.css' %}">
+</head>
+<body>
+    <header class="header">
+        <a href="{% url 'Tienda' %}">
+            <img class="header__logo" src="{% static 'venta/img/logo.png'%}" alt="logo">
+        </a>
+    </header>
+    
+    {%block contenido%}
+
+    {%endblock%}
+
+    <footer class="footer">
+        <p class="footer__texto" >Front End Store - Todos los derechos Reservados 2023.</p>
+    </footer>
+</body>
+</html>
